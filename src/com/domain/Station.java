@@ -4,7 +4,7 @@ package com.domain;
  * 2020/7/18 -16:54
  * 驿站表，包括驿站id，地址
  **/
-public class station {
+public class Station {
     private int station_id;
     private String station_name;
 

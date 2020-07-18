@@ -5,7 +5,7 @@ package com.domain;
  * 用户表，包括用户id，名字，密码，性别
  * 使用user_name以及user_password来进行登录
  **/
-public class user {
+public class User {
     private int user_id;
     private String user_name;
     private String user_password;

@@ -4,7 +4,7 @@ package com.domain;
  * 2020/7/18 -16:43
  * 包裹表
  **/
-public class parcel {
+public class Parcel {
     private int parcel_id;
     private int parcel_num;
     private int compy_id;

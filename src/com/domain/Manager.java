@@ -5,7 +5,7 @@ package com.domain;
  * 驿站管理人员表
  * 管理员id：manager_id，名称，性别，管理的驿站id
  **/
-public class manager {
+public class Manager {
     private int manager_id;
     private String manager_name;
     private String  manager_sex;

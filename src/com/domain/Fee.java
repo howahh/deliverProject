@@ -3,7 +3,7 @@ package com.domain;
 /**
  * 2020/7/18 -16:33
  **/
-public class fee {
+public class Fee {
     private int compy_id;
     private String compy_name;
     private int inpro_first;

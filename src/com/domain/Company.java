@@ -5,7 +5,7 @@ package com.domain;
  * 各家快递公司表
  * 包括compy_id和名称compy_name
  **/
-public class company {
+public class Company {
     private int compy_id;
     private String compy_name;
     public int getCompy_id() {

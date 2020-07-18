@@ -4,7 +4,7 @@ package com.domain;
  * 2020/7/18 -16:51
  * 员工表，包含员工id，姓名，性别，所属驿站id及管理者id
  **/
-public class staff {
+public class Staff {
     private int staf_id;
     private String staff_name;
     private int station_id;
