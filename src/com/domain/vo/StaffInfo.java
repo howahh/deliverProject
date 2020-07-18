@@ -1,17 +1,11 @@
-package com.domain;
+package com.domain.vo;
 
-
-/**
- * 2020/7/18 -16:51
- * 员工表，包含员工id，姓名，性别，所属驿站id及管理者id
- **/
-
-public class Staff {
+public class StaffInfo {
     private int staff_id; //员工编号
     private String staff_name; //员工姓名
     private String staff_sex; //员工性别
-    private int station_id; //员工所属驿站编号
-    private int manager_id; //员工上级编号
+    private String station_name;
+    private String manager_name;
 
     public int getStaff_id() {
         return staff_id;
@@ -19,7 +13,6 @@ public class Staff {
 
     public void setStaff_id(int staff_id) {
         this.staff_id = staff_id;
-
     }
 
     public String getStaff_name() {
@@ -38,32 +31,30 @@ public class Staff {
         this.staff_sex = staff_sex;
     }
 
-
-    public int getStation_id() {
-        return station_id;
+    public String getStation_name() {
+        return station_name;
     }
 
-    public void setStation_id(int station_id) {
-        this.station_id = station_id;
+    public void setStation_name(String station_name) {
+        this.station_name = station_name;
     }
 
-    public int getManager_id() {
-        return manager_id;
+    public String getManager_name() {
+        return manager_name;
     }
 
-    public void setManager_id(int manager_id) {
-        this.manager_id = manager_id;
+    public void setManager_name(String manager_name) {
+        this.manager_name = manager_name;
     }
 
     @Override
     public String toString() {
-
-        return "Staff{" +
+        return "StaffInfo{" +
                 "staff_id=" + staff_id +
                 ", staff_name='" + staff_name + '\'' +
                 ", staff_sex='" + staff_sex + '\'' +
-                ", station_id=" + station_id +
-                ", manager_id=" + manager_id +
+                ", station_name='" + station_name + '\'' +
+                ", manager_name='" + manager_name + '\'' +
                 '}';
     }
 }
