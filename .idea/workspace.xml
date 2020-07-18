@@ -30,6 +30,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56185861-5322-46fd-9cc5-9197bffa1348" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/domain/company.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/domain/fee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/domain/manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/domain/parcel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/domain/staff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/domain/station.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/domain/user.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +63,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1eoYvGZnULAJmezMdM6fI1T8h85" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -68,6 +78,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -164,7 +175,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594989641441</updated>
-      <workItem from="1594989647146" duration="5273000" />
+      <workItem from="1594989647146" duration="14156000" />
     </task>
     <task id="LOCAL-00001" summary="后端整体框架">
       <created>1594992801967</created>
@@ -180,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594993431215</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="后端整体框架">
+      <created>1594995247656</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1594995247656</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,14 +228,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594992590619" />
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1594991089476">
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1595063413713">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594991089476" />
-    <state x="367" y="0" width="898" height="824" key="CommitChangelistDialog2" timestamp="1594993429381">
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1595063413713" />
+    <state x="367" y="0" width="898" height="824" key="CommitChangelistDialog2" timestamp="1594995245995">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="367" y="0" width="898" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594993429381" />
+    <state x="367" y="0" width="898" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594995245995" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1594993757179">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -274,14 +292,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1024" height="208" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1594993928131" />
+    <state x="349" y="147" key="IDE.errors.dialog" timestamp="1594995923852">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="147" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1594995923852" />
     <state x="299" y="62" key="SettingsEditor" timestamp="1594993375297">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="299" y="62" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594993375297" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1595063928148">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595063928148" />
     <state x="499" y="172" key="extract.method.dialog" timestamp="1594991502210">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="172" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1594991502210" />
+    <state x="475" y="199" key="git4idea.merge.GitPullDialog" timestamp="1595060257822">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="475" y="199" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1595060257822" />
     <state x="144" y="0" key="new project wizard" timestamp="1594994757718">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
