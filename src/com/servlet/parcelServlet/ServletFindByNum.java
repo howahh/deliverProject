@@ -29,19 +29,22 @@ public class ServletFindByNum extends HttpServlet {
         response.setHeader("Access-Control-Allow-Headers", "*");
         /* 是否携带cookie */
         response.setHeader("Access-Control-Allow-Credentials", "true");
+        response.setHeader("content-type","text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String num=request.getParameter("parcel_num");
+        System.out.println(num);
         int parcel_num = Integer.parseInt(num);
         try {
             Parcel parcel=parcelimpl.findByNum(parcel_num);
             String jsonStr = JSON.toJSONString(parcel);//转换为json格式
             PrintWriter out = response.getWriter(); //响应对象输出流
-            out.print(jsonStr);
+            out.print("["+jsonStr+"]");
             out.flush();
             out.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -55,14 +58,16 @@ public class ServletFindByNum extends HttpServlet {
         response.setHeader("Access-Control-Allow-Headers", "*");
         /* 是否携带cookie */
         response.setHeader("Access-Control-Allow-Credentials", "true");
+        response.setHeader("content-type","text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String num=request.getParameter("parcel_num");
+        System.out.println(num);
         int parcel_num = Integer.parseInt(num);
         try {
             Parcel parcel=parcelimpl.findByNum(parcel_num);
             String jsonStr = JSON.toJSONString(parcel);//转换为json格式
             PrintWriter out = response.getWriter(); //响应对象输出流
-            out.print(jsonStr);
+            out.print("["+jsonStr+"]");
             out.flush();
             out.close();
         } catch (Exception e) {

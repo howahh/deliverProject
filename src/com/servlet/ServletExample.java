@@ -34,7 +34,6 @@ public class ServletExample extends HttpServlet {
             response.setHeader("Access-Control-Allow-Headers", "*");
             /* 是否携带cookie */
             response.setHeader("Access-Control-Allow-Credentials", "true");
-            response.setStatus(302); response.setHeader("location","url");
             List<Example> list = example.findAll();
             String jsonStr = JSON.toJSONString(list);//转换为json格式
             PrintWriter out = response.getWriter(); //响应对象输出流

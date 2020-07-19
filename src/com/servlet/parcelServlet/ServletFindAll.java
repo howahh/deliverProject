@@ -65,8 +65,6 @@ public class ServletFindAll extends HttpServlet {
             response.setHeader("content-type","text/html;charset=UTF-8");
             List<Parcel> list = parcelImpl.findAll();
             String jsonStr = JSON.toJSONString(list);//转换为json格式
-            System.out.println(list);
-            System.out.println(jsonStr);
             PrintWriter out = response.getWriter(); //响应对象输出流
             out.print(jsonStr);
             out.flush();
