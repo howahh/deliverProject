@@ -5,7 +5,7 @@ import com.domain.vo.StaffInfo;
 
 import java.util.List;
 
-public interface StaffDao {
+public interface StaffInter {
     /*
      查询Staff表的所有数据
      Staff的list，代表多个员工对象————是数据库中员工表的多行
