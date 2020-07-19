@@ -10,7 +10,7 @@ public interface ManagerInter {
 
     public List<Manager> findAll() throws SQLException;
 
-    public  Manager findById(int manager_id) throws SQLException;
+    public  Manager findByName(String manager_name) throws SQLException;
 
     public  int insert(Manager manager) throws SQLException;
 

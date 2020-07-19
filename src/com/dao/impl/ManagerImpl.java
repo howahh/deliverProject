@@ -26,9 +26,9 @@ public class ManagerImpl implements ManagerInter {
     }
 
     @Override
-    public Manager findById(int manager_id) throws SQLException {
+    public Manager findByName(String name) throws SQLException {
 
-        String sql = "select * from manager where manager_id = "+ manager_id;
+        String sql = "select * from manager where manager_name = "+ name;
 
         return qr.query(sql,new BeanHandler<Manager>(Manager.class));
     }
@@ -43,17 +43,15 @@ public class ManagerImpl implements ManagerInter {
 
     @Override
     public int update(Manager manager) throws SQLException {
-        String sql ="update manager set manager_name = ?, manager_sex = ?,station_id = ? where manager_id = ?";
+        String sql ="update manager set  where manager_id = ?,manager_name = ?, manager_sex = ?,station_id = ?";
 
         return qr.update(sql,manager.getManager_name(),manager.getStation_id(),manager.getStation_id());
     }
 
     @Override
-    public int delete(int manager_id) throws SQLException {
+    public int delete(int id) throws SQLException {
         String sql ="delete from manager where manager_id =?";
-
-
-        return qr.update(sql, manager_id);
+        return qr.update(sql, id);
     }
 
     @Override
