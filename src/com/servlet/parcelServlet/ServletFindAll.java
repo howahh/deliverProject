@@ -2,7 +2,6 @@ package com.servlet.parcelServlet;
 
 import com.alibaba.fastjson.JSON;
 import com.dao.impl.ParcelImpl;
-import com.domain.Example;
 import com.domain.Parcel;
 
 import javax.servlet.ServletException;
@@ -17,7 +16,7 @@ import java.util.List;
 /**
  * 2020/7/19 -16:03
  **/
-@WebServlet("/parcel/ServletFindAll")
+@WebServlet("/servletfindall")
 public class ServletFindAll extends HttpServlet {
     private ParcelImpl parcelImpl = new ParcelImpl();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -63,9 +62,11 @@ public class ServletFindAll extends HttpServlet {
             response.setHeader("Access-Control-Allow-Headers", "*");
             /* 是否携带cookie */
             response.setHeader("Access-Control-Allow-Credentials", "true");
+            response.setHeader("content-type","text/html;charset=UTF-8");
             List<Parcel> list = parcelImpl.findAll();
-            System.out.println(list);
             String jsonStr = JSON.toJSONString(list);//转换为json格式
+            System.out.println(list);
+            System.out.println(jsonStr);
             PrintWriter out = response.getWriter(); //响应对象输出流
             out.print(jsonStr);
             out.flush();
