@@ -1,6 +1,5 @@
-package com.servlet.StaffServlet.ManagerServlet;
+package com.servlet.ManagerServlet;
 
-import com.alibaba.fastjson.JSON;
 import com.dao.impl.ManagerImpl;
 import com.domain.Manager;
 
@@ -9,15 +8,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.List;
 
-//url地址：http://localhost:8888/MagInsertServlet
-@WebServlet("/MagInsertServlet")
-public class MagInsertServlet {
 
-        ManagerImpl magInsert = new ManagerImpl();
+//url地址：http://localhost:8888/MagDeleteServlet
+@WebServlet("/MagDeleteServlet")
+public class MagDeleteServlet {
+
+    ManagerImpl magDelete = new ManagerImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        System.out.println("doPost");
@@ -34,28 +32,16 @@ public class MagInsertServlet {
             response.setHeader("Access-Control-Allow-Credentials", "true");
             request.setCharacterEncoding("UTF-8");
 
-            //获取前段数据并强制类型转换
             Manager manager = null;
-            String magId1 = request.getParameter("manager_id");
-            String magName = request.getParameter(("manager_name"));
-            String magSex = request.getParameter("manager_sex");
-            String staId1 = request.getParameter("station_id");
-            int magId = Integer.parseInt("MagId");
-            int staId = Integer.parseInt("staId1");
+            //获取前端数据并且强制类型转换
+            int id = Integer.parseInt(request.getParameter("manager_id"));
+            //调用dao层删除数据
+            int magId = magDelete.delete(id);
 
-            // 将数据封装在manager对象中
-            manager.setManager_id(magId);
-            manager.setManager_name(magName);
-            manager.setManager_sex(magSex);
-            manager.setStation_id(staId);
-
-            //调用dao层显示数据
-            magInsert.insert(manager);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
 
 
     }
@@ -75,23 +61,12 @@ public class MagInsertServlet {
             response.setHeader("Access-Control-Allow-Credentials", "true");
             request.setCharacterEncoding("UTF-8");
 
-            //获取前段数据并强制类型转换
             Manager manager = null;
-            String magId1 = request.getParameter("manager_id");
-            String magName = request.getParameter(("manager_name"));
-            String magSex = request.getParameter("manager_sex");
-            String staId1 = request.getParameter("station_id");
-            int magId = Integer.parseInt("MagId");
-            int staId = Integer.parseInt("staId1");
+            //获取前端数据并且强制类型转换
+            int id = Integer.parseInt(request.getParameter("manager_id"));
+            //调用dao层删除数据
+            int magId = magDelete.delete(id);
 
-            // 将数据封装在manager对象中
-            manager.setManager_id(magId);
-            manager.setManager_name(magName);
-            manager.setManager_sex(magSex);
-            manager.setStation_id(staId);
-
-            //调用dao层显示数据
-            magInsert.insert(manager);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -99,4 +74,7 @@ public class MagInsertServlet {
 
 
     }
+
+
+
 }

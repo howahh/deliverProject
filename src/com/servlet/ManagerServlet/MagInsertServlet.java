@@ -1,6 +1,5 @@
-package com.servlet.StaffServlet.ManagerServlet;
+package com.servlet.ManagerServlet;
 
-import com.alibaba.fastjson.JSON;
 import com.dao.impl.ManagerImpl;
 import com.domain.Manager;
 
@@ -9,16 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.List;
 
+//url地址：http://localhost:8888/MagInsertServlet
+@WebServlet("/MagInsertServlet")
+public class MagInsertServlet {
 
-//url地址：http://localhost:8888/MagUpdateServlet
-@WebServlet("/MagUpdateServlet")
-
-public class MagUpdateServlet {
-       ManagerImpl magUpdate = new ManagerImpl();
+        ManagerImpl magInsert = new ManagerImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        System.out.println("doPost");
@@ -35,9 +31,8 @@ public class MagUpdateServlet {
             response.setHeader("Access-Control-Allow-Credentials", "true");
             request.setCharacterEncoding("UTF-8");
 
-
             //获取前段数据并强制类型转换
-
+            Manager manager = null;
             String magId1 = request.getParameter("manager_id");
             String magName = request.getParameter(("manager_name"));
             String magSex = request.getParameter("manager_sex");
@@ -46,16 +41,13 @@ public class MagUpdateServlet {
             int staId = Integer.parseInt("staId1");
 
             // 将数据封装在manager对象中
-            Manager manager = null;
             manager.setManager_id(magId);
             manager.setManager_name(magName);
             manager.setManager_sex(magSex);
             manager.setStation_id(staId);
 
-            //调用dao层
-            magUpdate.update(manager);
-//        response.sendRedirect("index.html");
-
+            //调用dao层显示数据
+            magInsert.insert(manager);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -80,9 +72,8 @@ public class MagUpdateServlet {
             response.setHeader("Access-Control-Allow-Credentials", "true");
             request.setCharacterEncoding("UTF-8");
 
-
             //获取前段数据并强制类型转换
-
+            Manager manager = null;
             String magId1 = request.getParameter("manager_id");
             String magName = request.getParameter(("manager_name"));
             String magSex = request.getParameter("manager_sex");
@@ -91,16 +82,13 @@ public class MagUpdateServlet {
             int staId = Integer.parseInt("staId1");
 
             // 将数据封装在manager对象中
-            Manager manager = null;
             manager.setManager_id(magId);
             manager.setManager_name(magName);
             manager.setManager_sex(magSex);
             manager.setStation_id(staId);
 
-            //调用dao层
-            magUpdate.update(manager);
-//        response.sendRedirect("index.html");
-
+            //调用dao层显示数据
+            magInsert.insert(manager);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -108,7 +96,4 @@ public class MagUpdateServlet {
 
 
     }
-
-
-
 }

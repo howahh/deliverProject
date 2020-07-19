@@ -1,7 +1,5 @@
-package com.servlet.StaffServlet.ManagerServlet;
+package com.servlet.ManagerServlet;
 
-import com.alibaba.fastjson.JSON;
-import com.dao.ManagerInter;
 import com.dao.impl.ManagerImpl;
 import com.domain.Manager;
 
@@ -10,17 +8,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.List;
 
 
+//url地址：http://localhost:8888/MagUpdateServlet
+@WebServlet("/MagUpdateServlet")
 
-//url地址：http://localhost:8888/MagFindOneServlet
-@WebServlet("/MagFindOneServlet")
-public class MagFindOneServlet {
-
-    private ManagerImpl magFindOne = new ManagerImpl();
+public class MagUpdateServlet {
+       ManagerImpl magUpdate = new ManagerImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        System.out.println("doPost");
@@ -35,23 +30,28 @@ public class MagFindOneServlet {
             response.setHeader("Access-Control-Allow-Headers", "*");
             /* 是否携带cookie */
             response.setHeader("Access-Control-Allow-Credentials", "true");
-
-
             request.setCharacterEncoding("UTF-8");
-            response.setCharacterEncoding("UTF-8");
-            response.setContentType("text/html;charset=UTF-8");
 
-            //获取前端数据
-            String mag_name = request.getParameter("manager_name");
 
-            //调用dao层方法
-            Manager magOne = magFindOne.findByName(mag_name);
-            //返回数据
-            String jsonStr = JSON.toJSONString(magOne);
-            PrintWriter out = response.getWriter();
-            out.print(jsonStr);
-            out.flush();
-            out.close();
+            //获取前段数据并强制类型转换
+
+            String magId1 = request.getParameter("manager_id");
+            String magName = request.getParameter(("manager_name"));
+            String magSex = request.getParameter("manager_sex");
+            String staId1 = request.getParameter("station_id");
+            int magId = Integer.parseInt("MagId");
+            int staId = Integer.parseInt("staId1");
+
+            // 将数据封装在manager对象中
+            Manager manager = null;
+            manager.setManager_id(magId);
+            manager.setManager_name(magName);
+            manager.setManager_sex(magSex);
+            manager.setStation_id(staId);
+
+            //调用dao层
+            magUpdate.update(manager);
+//        response.sendRedirect("index.html");
 
 
         } catch (SQLException e) {
@@ -60,14 +60,10 @@ public class MagFindOneServlet {
 
 
 
-
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        System.out.println("doGet");
-
-
         try {
             /* 允许跨域的主机地址 */
             response.setHeader("Access-Control-Allow-Origin", "*");
@@ -79,22 +75,28 @@ public class MagFindOneServlet {
             response.setHeader("Access-Control-Allow-Headers", "*");
             /* 是否携带cookie */
             response.setHeader("Access-Control-Allow-Credentials", "true");
-
-
             request.setCharacterEncoding("UTF-8");
-            response.setCharacterEncoding("UTF-8");
-            response.setContentType("text/html;charset=UTF-8");
-            //获取前端数据
-            String mag_name = request.getParameter("manager_name");
 
-            //调用dao层方法
-            Manager magOne = magFindOne.findByName(mag_name);
-            //返回数据
-            String jsonStr = JSON.toJSONString(magOne);
-            PrintWriter out = response.getWriter();
-            out.print(jsonStr);
-            out.flush();
-            out.close();
+
+            //获取前段数据并强制类型转换
+
+            String magId1 = request.getParameter("manager_id");
+            String magName = request.getParameter(("manager_name"));
+            String magSex = request.getParameter("manager_sex");
+            String staId1 = request.getParameter("station_id");
+            int magId = Integer.parseInt("MagId");
+            int staId = Integer.parseInt("staId1");
+
+            // 将数据封装在manager对象中
+            Manager manager = null;
+            manager.setManager_id(magId);
+            manager.setManager_name(magName);
+            manager.setManager_sex(magSex);
+            manager.setStation_id(staId);
+
+            //调用dao层
+            magUpdate.update(manager);
+//        response.sendRedirect("index.html");
 
 
         } catch (SQLException e) {
@@ -103,6 +105,7 @@ public class MagFindOneServlet {
 
 
     }
+
 
 
 }
