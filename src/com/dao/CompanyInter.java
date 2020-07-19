@@ -1,4 +1,4 @@
-package com.dao.singleinter;
+package com.dao;
 
 import com.domain.Company;
 
