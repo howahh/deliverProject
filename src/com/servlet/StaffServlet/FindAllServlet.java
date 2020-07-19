@@ -1,10 +1,8 @@
 package com.servlet.StaffServlet;
 
 import com.alibaba.fastjson.JSON;
-import com.dao.StaffDao;
-import com.dao.impl.ExampleImpl;
-import com.dao.impl.StaffDaoImpl;
-import com.domain.Staff;
+import com.dao.StaffInter;
+import com.dao.impl.StaffInterImpl;
 import com.domain.vo.StaffInfo;
 
 import javax.servlet.ServletException;
@@ -18,7 +16,7 @@ import java.util.List;
 
 @WebServlet("/StaffFindAllServlet")
 public class FindAllServlet extends HttpServlet {
-    private StaffDao staffDao = new StaffDaoImpl();
+    private StaffInter staffInter = new StaffInterImpl();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -41,7 +39,7 @@ public class FindAllServlet extends HttpServlet {
         //第二步：查询所有,调用dao获得数据
         List<StaffInfo> list = null;
         try {
-            list = staffDao.findAllInfo();
+            list = staffInter.findAllInfo();
 //            System.out.println(list);
         } catch (Exception e) {
             e.printStackTrace();
