@@ -1,6 +1,6 @@
 package com.dao.impl;
 
-import com.dao.singleinter.CompanyInter;
+import com.dao.CompanyInter;
 import com.domain.Company;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
