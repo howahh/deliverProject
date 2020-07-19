@@ -16,7 +16,9 @@ import java.util.List;
 
 @WebServlet("/StaffFindAllServlet")
 public class FindAllServlet extends HttpServlet {
+
     private StaffInter staffInter = new StaffInterImpl();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
