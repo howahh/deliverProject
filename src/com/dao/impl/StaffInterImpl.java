@@ -32,19 +32,20 @@ public class StaffInterImpl implements StaffInter {
 
     @Override
     public int insert(Staff staff) throws Exception {
-        String sql = "insert into stu(staff_id,staff_name,staff_sex,station_id,manager_id) values(?,?,?,?,?)";
+        String sql = "insert into staff(staff_id,staff_name,staff_sex,station_id,manager_id) values(?,?,?,?,?)";
         return qr.update(sql,staff.getStaff_id(),staff.getStaff_name(),staff.getStaff_sex(),staff.getStation_id(),staff.getManager_id());
     }
 
     @Override
     public int update(Staff staff) throws Exception {
-        String sql = "update staff set staff_name = ?,staff_sex=?,station_id=?,manager_id=?, where staff_id=?";
-        return qr.update(sql,staff.getStaff_name(),staff.getStaff_sex(),staff.getStation_id(),staff.getManager_id(),staff.getStaff_id());
+        String sql = "update staff set staff_name=?,staff_sex=?,station_id=?,manager_id=? where staff_id=?";
+        int a = qr.update(sql,staff.getStaff_name(),staff.getStaff_sex(),staff.getStation_id(),staff.getManager_id(),staff.getStaff_id());
+        return 0;
     }
 
     @Override
     public int delete(int id) throws Exception {
-        String sql = "delete from stu where staff_id = ?";
+        String sql = "delete from staff where staff_id = ?";
         return qr.update(sql,id);
     }
 
@@ -60,8 +61,37 @@ public class StaffInterImpl implements StaffInter {
 
     public static void main(String[] args) throws Exception {
         StaffInter dao = new StaffInterImpl();
-        //全部查询
-        List<StaffInfo> list = dao.findAllInfo();
-        System.out.println(list);
+//        //全部查询
+//        List<StaffInfo> list = dao.findAllInfo();
+//        System.out.println(list);
+
+//        //增加
+//        Staff staff = new Staff();
+//        staff.setStaff_id(50);
+//        staff.setStaff_name("xzg");
+//        staff.setStaff_sex("男");
+//        staff.setManager_id(2);
+//        staff.setStation_id(3);
+//        dao.insert(staff);
+
+//        //删除
+//        int id = 50;
+//        dao.delete(id);
+
+//        //修改
+//        Staff staff = new Staff();
+//        staff.setStaff_id(50);
+//        staff.setStaff_name("zxw");
+//        staff.setStaff_sex("女");
+//        staff.setManager_id(6);
+//        staff.setStation_id(7);
+//        dao.update(staff);
+
+        //vo映射
+//        List<StuScore> list = dao.findAllScores();
+//        System.out.println(list);
+
     }
+
+
 }
