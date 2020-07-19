@@ -4,8 +4,8 @@ public class StaffInfo {
     private int staff_id; //员工编号
     private String staff_name; //员工姓名
     private String staff_sex; //员工性别
-    private String station_name;
-    private String manager_name;
+    private String station_name; //员工所在驿站
+    private String manager_name; //员工上级
 
     public int getStaff_id() {
         return staff_id;

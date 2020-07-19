@@ -18,16 +18,21 @@ public class StaffInterImpl implements StaffInter {
     public List<Staff> findAll() throws Exception {
         String sql = "select * from staff";
         List<Staff> list = qr.query(sql, new BeanListHandler<Staff>(Staff.class));
-        //返回结果通过反射成为一个Javabean的list，Staff是javabean
+        //返回结果通过反射成为一个Javabean的list，Staff是javabean的类型
         return list;
     }
 
+
     @Override
-    public Staff findOne(int id) throws Exception{
-        String sql = "select * from staff where id=" + id;
+    public StaffInfo findOne(String name) throws Exception{
+        String sql = "select staff.staff_id,staff.staff_name,staff.staff_sex,station.station_name,manager.manager_name\n" +
+                "from staff,station,manager\n" +
+                "where staff.station_id=station.station_id\n" +
+                "and staff.manager_id=manager.manager_id\n" +
+                "and staff.staff_name= "+"'"+ name +"'";
+//        String sql = "select * from staff where staff_name="+"'"+ name +"'";
         //反射成一个Staff类的bean，根据id做查询
-        Staff staff = qr.query(sql, new BeanHandler<Staff>(Staff.class));
-        return staff;
+        return qr.query(sql, new BeanHandler<StaffInfo>(StaffInfo.class));
     }
 
     @Override
@@ -64,6 +69,11 @@ public class StaffInterImpl implements StaffInter {
 //        //全部查询
 //        List<StaffInfo> list = dao.findAllInfo();
 //        System.out.println(list);
+
+//          //按名称寻找
+//        StaffInfo staffInfo = new StaffInfo();
+//        staffInfo = dao.findOne("李琴");
+//        System.out.println(staffInfo);
 
 //        //增加
 //        Staff staff = new Staff();
