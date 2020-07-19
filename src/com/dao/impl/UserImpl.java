@@ -45,7 +45,7 @@ public class UserImpl implements UserInter {
 
     @Override
     public int updatePsw(User user) throws Exception {
-        String sql = "update user set user_password= ? where id=?";
+        String sql = "update user set user_password= ? where id=?;";
         int a = qr.update(sql,user.getUser_password(),user.getUser_id());
         return a;
     }

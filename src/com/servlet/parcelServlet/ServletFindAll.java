@@ -1,8 +1,9 @@
-package com.servlet;
+package com.servlet.parcelServlet;
 
 import com.alibaba.fastjson.JSON;
-import com.dao.impl.ExampleImpl;
+import com.dao.impl.ParcelImpl;
 import com.domain.Example;
+import com.domain.Parcel;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,11 +15,11 @@ import java.io.PrintWriter;
 import java.util.List;
 
 /**
- * 2020/7/17 -20:53
+ * 2020/7/19 -16:03
  **/
-@WebServlet("/example")
-public class ServletExample extends HttpServlet {
-    private ExampleImpl example = new ExampleImpl();
+@WebServlet("/parcel/ServletFindAll")
+public class ServletFindAll extends HttpServlet {
+    private ParcelImpl parcelImpl = new ParcelImpl();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /**
          * 跨域，与前端进行连接
@@ -34,8 +35,8 @@ public class ServletExample extends HttpServlet {
             response.setHeader("Access-Control-Allow-Headers", "*");
             /* 是否携带cookie */
             response.setHeader("Access-Control-Allow-Credentials", "true");
-            response.setStatus(302); response.setHeader("location","url");
-            List<Example> list = example.findAll();
+            List<Parcel> list = parcelImpl.findAll();
+            System.out.println(list);
             String jsonStr = JSON.toJSONString(list);//转换为json格式
             PrintWriter out = response.getWriter(); //响应对象输出流
             out.print(jsonStr);
@@ -62,7 +63,8 @@ public class ServletExample extends HttpServlet {
             response.setHeader("Access-Control-Allow-Headers", "*");
             /* 是否携带cookie */
             response.setHeader("Access-Control-Allow-Credentials", "true");
-            List<Example> list = example.findAll();
+            List<Parcel> list = parcelImpl.findAll();
+            System.out.println(list);
             String jsonStr = JSON.toJSONString(list);//转换为json格式
             PrintWriter out = response.getWriter(); //响应对象输出流
             out.print(jsonStr);
