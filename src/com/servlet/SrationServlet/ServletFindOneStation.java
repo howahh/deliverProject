@@ -30,14 +30,15 @@ public class ServletFindOneStation extends HttpServlet {
         /* 是否携带cookie */
         response.setHeader("Access-Control-Allow-Credentials", "true");
 
-        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=utf-8");
+        request.setCharacterEncoding("utf-8");
 
         int id = Integer.parseInt(request.getParameter("id"));//获得要查找的id
         try {
             Station list = stationInter.findById(id);
             String jsonStr = JSON.toJSONString(list);//转换为json格式
             PrintWriter out = response.getWriter(); //响应对象输出流
-            out.print(jsonStr);
+            out.print("["+jsonStr+"]");
             out.flush();
             out.close();
             //通过流返回客户端

@@ -2,6 +2,7 @@ package com.servlet.SrationServlet;
 //修改驿站
 
 import com.dao.impl.ManagerImpl;
+import com.dao.impl.StationImpl;
 import com.domain.Manager;
 import com.domain.Station;
 
@@ -43,8 +44,11 @@ public class ServletUpdateStation extends HttpServlet {
         Manager manager = new Manager();
         manager.setManager_id(manager_id);
         try {
-            new ManagerImpl().insert(manager);
+            new StationImpl().update(station);
+           // new ManagerImpl().update(manager);
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

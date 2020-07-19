@@ -50,8 +50,8 @@ public class StationImpl implements StationInter {
 
     @Override
     public int update(Station station) throws Exception {
-        String sql = "update station set station_id = ?,station_name = ?";
-        return qr.update(sql,station.getStation_id(),station.getStation_name());
+        String sql = "update station set station_id = ?,station_name = ?,manager_id";
+        return qr.update(sql,station.getStation_id(),station.getStation_name(),station.getManager_id());
     }
 
      //获得对应驿站的包裹的信息
