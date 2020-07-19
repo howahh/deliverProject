@@ -32,7 +32,6 @@ public class ServletFindByNum extends HttpServlet {
         response.setHeader("content-type","text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String num=request.getParameter("parcel_num");
-        System.out.println(num);
         int parcel_num = Integer.parseInt(num);
         try {
             Parcel parcel=parcelimpl.findByNum(parcel_num);

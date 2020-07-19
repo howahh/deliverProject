@@ -37,13 +37,13 @@ public class StationImpl implements StationInter {
     @Override
     //根据id删除数据
     public int delete(int station_id) throws Exception {
-        String sql = "delete from example where station_id= ?" ;
+        String sql = "delete from station where station_id= ?" ;
         return qr.update(sql,station_id);
     }
 
     @Override
     public int insert(Station station) throws Exception {
-        String sql = "insert into example values(?,?,?)";
+        String sql = "insert into station values(?,?,?)";
         //?中的参数会被qr.update中的参数所替换
         return qr.update(sql, station.getStation_id(), station.getStation_name(),station.getManager_id());
     }
