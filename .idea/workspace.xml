@@ -29,16 +29,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56185861-5322-46fd-9cc5-9197bffa1348" name="Default Changelist" comment="实现简单登录控制，">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/servlet/parcelServlet/ServletDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/deliverProject_war_exploded/WEB-INF/classes/com/servlet/ServletExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/deliverProject_war_exploded/WEB-INF/classes/com/servlet/ServletExample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/deliverProject_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/deliverProject_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/deliverProject_war_exploded/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/deliverProject/com/servlet/ServletExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/deliverProject/com/servlet/ServletExample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/servlet/parcelServlet/ServletFindAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/servlet/parcelServlet/ServletFindAll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/servlet/parcelServlet/ServletFindByNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/servlet/parcelServlet/ServletFindByNum.java" afterDir="false" />
+    <list default="true" id="56185861-5322-46fd-9cc5-9197bffa1348" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/com/servlet/ServletExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/servlet/ServletExample.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +173,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594989641441</updated>
-      <workItem from="1594989647146" duration="57544000" />
+      <workItem from="1594989647146" duration="58013000" />
     </task>
     <task id="LOCAL-00001" summary="后端整体框架">
       <created>1594992801967</created>
@@ -260,7 +252,21 @@
       <option name="project" value="LOCAL" />
       <updated>1595160606776</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="simple change">
+      <created>1595172954473</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1595172954473</updated>
+    </task>
+    <task id="LOCAL-00013" summary="simple change">
+      <created>1595173101594</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1595173101594</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +293,8 @@
     <MESSAGE value="实现简单登录控制" />
     <MESSAGE value="一些Servlet更新" />
     <MESSAGE value="可以连接前端，还需要联合查询改进" />
-    <option name="LAST_COMMIT_MESSAGE" value="可以连接前端，还需要联合查询改进" />
+    <MESSAGE value="simple change" />
+    <option name="LAST_COMMIT_MESSAGE" value="simple change" />
   </component>
   <component name="WindowStateProjectService">
     <state x="651" y="274" key="#Notifications" timestamp="1594989701905">
@@ -302,14 +309,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1595143477078" />
-    <state x="367" y="0" width="898" height="824" key="CommitChangelistDialog2" timestamp="1595160604121">
+    <state x="367" y="0" width="898" height="824" key="CommitChangelistDialog2" timestamp="1595173099722">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="367" y="0" width="898" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1595160604121" />
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1595172800052">
+    <state x="367" y="0" width="898" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1595173099722" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1595173057508">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1595172800052" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1595173057508" />
     <state x="700" y="224" key="FileChooserDialogImpl" timestamp="1595155526029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -370,10 +377,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="299" y="62" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594993375297" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1595160612855">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1595173132135">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595160612855" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595173132135" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595064070585">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -382,10 +389,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="172" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1594991502210" />
-    <state x="475" y="199" key="git4idea.merge.GitPullDialog" timestamp="1595172728214">
+    <state x="475" y="199" key="git4idea.merge.GitPullDialog" timestamp="1595173178052">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="475" y="199" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1595172728214" />
+    <state x="475" y="199" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1595173178052" />
     <state x="144" y="0" key="new project wizard" timestamp="1594994757718">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
