@@ -1,7 +1,6 @@
 package com.dao.impl;
 
-import com.dao.StaffDao;
-import com.domain.Example;
+import com.dao.StaffInter;
 import com.domain.Staff;
 import com.domain.vo.StaffInfo;
 import com.util.JDBCUtil;
@@ -9,10 +8,9 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
-import java.sql.SQLException;
 import java.util.List;
 
-public class StaffDaoImpl implements StaffDao {
+public class StaffInterImpl implements StaffInter {
 
     QueryRunner qr = new QueryRunner(JDBCUtil.getDataSource());
 
@@ -61,7 +59,7 @@ public class StaffDaoImpl implements StaffDao {
     }
 
     public static void main(String[] args) throws Exception {
-        StaffDao dao = new StaffDaoImpl();
+        StaffInter dao = new StaffInterImpl();
         //全部查询
         List<StaffInfo> list = dao.findAllInfo();
         System.out.println(list);
