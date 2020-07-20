@@ -30,29 +30,29 @@ public class ServletUpdateStation extends HttpServlet {
         response.setHeader("Access-Control-Allow-Headers", "*");
         /* 是否携带cookie */
         response.setHeader("Access-Control-Allow-Credentials", "true");
-
-        response.setContentType("text/html;charset=utf-8");
-        request.setCharacterEncoding("utf-8");
-        StationImpl stationImpl=new StationImpl();
+//解决中文乱码
+        response.setHeader("content-type","text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+//        StationImpl stationImpl=new StationImpl();
  //       int a = request.getParameter("station_id")-"0";
-        String station_id2 = request.getParameter("station_id");
-        int station_id = Integer.parseInt(station_id2);
+
+        //获取驿站的id，名字，管理者的名字
+        int station_id = Integer.parseInt(request.getParameter("station_id"));
+ //       int station_id = Integer.parseInt(station_id2);
         String station_name = request.getParameter("station_name");
         int manager_id = Integer.parseInt(request.getParameter("manager_id"));
 
 
-            Station station = new Station();
+        Station station = new Station();
         station.setStation_name(station_name);
         station.setManager_id(manager_id);
         station.setStation_id(station_id);
-//        String jsonStr = JSON.toJSONString(station);//转换为json格式
-//        PrintWriter out = response.getWriter(); //响应对象输出流
-//        out.print(jsonStr);
-//        out.flush();
-//        out.close();
+
+//        System.out.println(station_name);
+//        System.out.println(station_id);
         StationImpl station1 = new StationImpl();
             try {
-                station1.update(station);//System.out.println(station_name);
+                station1.update(station);//
             } catch (Exception e) {
                 e.printStackTrace();
             }
