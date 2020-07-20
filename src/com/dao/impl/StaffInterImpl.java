@@ -43,8 +43,8 @@ public class StaffInterImpl implements StaffInter {
 
     @Override
     public int update(Staff staff) throws Exception {
-        String sql = "update staff set staff_name=?,staff_sex=?,station_id=?,manager_id=? where staff_id=?";
-        int a = qr.update(sql,staff.getStaff_name(),staff.getStaff_sex(),staff.getStation_id(),staff.getManager_id(),staff.getStaff_id());
+        String sql = "update staff set staff_name=?,staff_sex=? where staff_id=?"; //只修改姓名，性别
+        int a = qr.update(sql,staff.getStaff_name(),staff.getStaff_sex(),staff.getStaff_id());
         return 0;
     }
 
@@ -90,11 +90,9 @@ public class StaffInterImpl implements StaffInter {
 
 //        //修改
 //        Staff staff = new Staff();
-//        staff.setStaff_id(50);
-//        staff.setStaff_name("zxw");
+//        staff.setStaff_id(1);
+//        staff.setStaff_name("zzn");
 //        staff.setStaff_sex("女");
-//        staff.setManager_id(6);
-//        staff.setStation_id(7);
 //        dao.update(staff);
 
         //vo映射
