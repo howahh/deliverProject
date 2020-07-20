@@ -1,5 +1,6 @@
 package com.dao.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.dao.ManagerInter;
 import com.domain.Manager;
 import com.domain.vo.MagStation;
@@ -11,14 +12,14 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 import java.sql.SQLException;
 import java.util.List;
 
-public class ManagerImpl implements ManagerInter {
+public class ManagerDaoImpl implements ManagerInter {
 
-   QueryRunner qr = new QueryRunner(JDBCUtil.getDataSource());
+    QueryRunner qr = new QueryRunner(JDBCUtil.getDataSource());
 
 
 
     @Override
-    public List<Manager> findAll() throws SQLException {
+    public List<Manager> findall() throws SQLException {
         String sql = "select * from manager";
         List<Manager> list = qr.query(sql,new BeanListHandler<Manager>(Manager.class));
 
@@ -26,9 +27,9 @@ public class ManagerImpl implements ManagerInter {
     }
 
     @Override
-    public Manager findByName(String name) throws SQLException {
+    public Manager findByid(int manager_id) throws SQLException {
 
-        String sql = "select * from manager where manager_name = "+ name;
+        String sql = "select * from manager where manager_id = "+ manager_id;
 
         return qr.query(sql,new BeanHandler<Manager>(Manager.class));
     }
@@ -43,19 +44,21 @@ public class ManagerImpl implements ManagerInter {
 
     @Override
     public int update(Manager manager) throws SQLException {
-        String sql ="update manager set  where manager_id = ?,manager_name = ?, manager_sex = ?,station_id = ?";
+        String sql ="update manager set manager_name = ?, manager_sex = ?,station_id = ? where manager_id = ?";
 
         return qr.update(sql,manager.getManager_name(),manager.getStation_id(),manager.getStation_id());
     }
 
     @Override
-    public int delete(int id) throws SQLException {
+    public int delete(int manager_id) throws SQLException {
         String sql ="delete from manager where manager_id =?";
-        return qr.update(sql, id);
+
+
+        return qr.update(sql, manager_id);
     }
 
     @Override
-    public List<MagStation> findMagStation() throws SQLException {
+    public List<MagStation> findAllScores() throws SQLException {
         String sql = "select manager.manager_id,manager_name,station.station_id,station_name\n" +
                 "from manager,station\n" +
                 "where manager.manager_id = station.manager_id\n" +
@@ -65,9 +68,9 @@ public class ManagerImpl implements ManagerInter {
 
 
     public static void main(String[] args) throws SQLException {
-         ManagerInter dao = new ManagerImpl();
-        List<Manager> list = dao.findAll();
-        System.out.println(list);
+        ManagerInter dao = new ManagerDaoImpl();
+//        List<Manager> list = dao.findall();
+//        System.out.println(list);
 
 
 //        Manager manager = new Manager();
@@ -79,13 +82,13 @@ public class ManagerImpl implements ManagerInter {
 
 
 
-//        List<MagStation> list = dao.findMagStation();
-//        System.out.println(list);
-//
-//
-//        JSON.parse("");
-//        String jsonStr = JSON.toJSONString(list);
-//        System.out.println(jsonStr);
+        List<MagStation> list = dao.findAllScores();
+        System.out.println(list);
+
+
+        JSON.parse("");
+        String jsonStr = JSON.toJSONString(list);
+        System.out.println(jsonStr);
 
 
 
