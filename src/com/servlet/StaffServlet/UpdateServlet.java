@@ -36,17 +36,11 @@ public class UpdateServlet extends HttpServlet {
         int id = Integer.parseInt(sid);
         String name = request.getParameter("staff_name");
         String sex = request.getParameter("staff_sex");
-        String sid2 = request.getParameter("station_id");
-        int s_id = Integer.parseInt(sid2);
-        String sid3= request.getParameter("manager_id");
-        int m_id = Integer.parseInt(sid3);
 
         //将数据封装在staff对象中
         staff.setStaff_id(id);
         staff.setStaff_name(name);
         staff.setStaff_sex(sex);
-        staff.setStation_id(s_id);
-        staff.setManager_id(m_id);
 
         //更新数据
         try {
@@ -78,17 +72,11 @@ public class UpdateServlet extends HttpServlet {
         int id = Integer.parseInt(sid);
         String name = request.getParameter("staff_name");
         String sex = request.getParameter("staff_sex");
-        String sid2 = request.getParameter("station_id");
-        int s_id = Integer.parseInt(sid2);
-        String sid3= request.getParameter("manager_id");
-        int m_id = Integer.parseInt(sid3);
 
         //将数据封装在staff对象中
         staff.setStaff_id(id);
         staff.setStaff_name(name);
         staff.setStaff_sex(sex);
-        staff.setStation_id(s_id);
-        staff.setManager_id(m_id);
 
         //更新数据
         try {

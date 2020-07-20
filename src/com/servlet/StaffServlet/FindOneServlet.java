@@ -46,7 +46,7 @@ public class FindOneServlet extends HttpServlet {
 
             String jsonStr = JSON.toJSONString(staff);//转换为json格式
             PrintWriter out = response.getWriter(); //响应对象输出流
-            out.print(jsonStr);
+            out.print("["+jsonStr+"]");
             out.flush();
             out.close();
             //通过流返回客户端
@@ -83,7 +83,7 @@ public class FindOneServlet extends HttpServlet {
         }
         String jsonStr = JSON.toJSONString(staff);//转换为json格式
             PrintWriter out = response.getWriter(); //响应对象输出流
-            out.print(jsonStr);
+            out.print("["+jsonStr+"]");
             out.flush();
             out.close();
             //通过流返回客户端
