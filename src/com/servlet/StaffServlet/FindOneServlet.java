@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "/StaffFindOneServlet")
+@WebServlet("/StaffFindOneServlet")
 public class FindOneServlet extends HttpServlet {
     private StaffInter staffInter = new StaffInterImpl();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,8 +40,9 @@ public class FindOneServlet extends HttpServlet {
             response.setContentType("text/html;charset=UTF-8");
             request.setCharacterEncoding("UTF-8");
 
-            String name = request.getParameter("staff_name");//获取页面输入的姓名信息
-            staff= staffInter.findOne(name);
+            String id = request.getParameter("staff_id");//获取页面输入的姓名信息
+            int staff_id = Integer.parseInt(id);
+            staff= staffInter.findOne(staff_id);
 
             String jsonStr = JSON.toJSONString(staff);//转换为json格式
             PrintWriter out = response.getWriter(); //响应对象输出流
@@ -73,9 +74,10 @@ public class FindOneServlet extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
             response.setContentType("text/html;charset=UTF-8");
             request.setCharacterEncoding("UTF-8");
-            String name = request.getParameter("staff_name");
+            String id = request.getParameter("staff_id");
+            int staff_id = Integer.parseInt(id);
         try {
-            staff= staffInter.findOne(name);
+            staff= staffInter.findOne(staff_id);
         } catch (Exception e) {
             e.printStackTrace();
         }
