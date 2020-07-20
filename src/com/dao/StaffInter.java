@@ -12,7 +12,7 @@ public interface StaffInter {
       */
     public List<Staff> findAll() throws Exception;
 
-    public StaffInfo findOne(String name) throws Exception;
+    public StaffInfo findOne(int id) throws Exception;
 
     /*
     把内存中的数据放到数据库中
