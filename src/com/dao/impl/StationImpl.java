@@ -50,8 +50,8 @@ public class StationImpl implements StationInter {
 
     @Override
     public int update(Station station) throws Exception {
-        String sql = "update station set station_id = ?,station_name = ?,manager_id";
-        return qr.update(sql,station.getStation_id(),station.getStation_name(),station.getManager_id());
+        String sql = "update station set station_name = ?,manager_id = ? where station_id=?";
+        return qr.update(sql,station.getStation_name(),station.getManager_id(),station.getStation_id());
     }
 
      //获得对应驿站的包裹的信息
@@ -63,13 +63,15 @@ public class StationImpl implements StationInter {
         return list;
     }
 
-//    public static void main(String[] args) throws Exception {
-//
-//        StationImpl station = new StationImpl();
-//
-//        System.out.println(station.findById(3));
-//
-//
-//    }
+    public static void main(String[] args) throws Exception {
+
+        StationImpl stationImpl = new StationImpl();
+        Station station = new Station();
+        station.setManager_id(11);
+        station.setStation_name("77");
+        station.setStation_id(9);
+        stationImpl.update(station);
+
+    }
 
 }

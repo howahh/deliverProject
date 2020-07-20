@@ -34,15 +34,15 @@ public class ServletUpdateStation extends HttpServlet {
 
         int station_id = Integer.parseInt(request.getParameter("station_id"));
         String station_name = request.getParameter("station_name");
-        int manager_id = Integer.parseInt(request.getParameter("manager"));
+        int manager_id = Integer.parseInt(request.getParameter("manager_id"));
 
         Station station = new Station();
         station.setStation_name(station_name);
         station.setManager_id(manager_id);
         station.setStation_id(station_id);
 
-        Manager manager = new Manager();
-        manager.setManager_id(manager_id);
+//        Manager manager = new Manager();
+//        manager.setManager_id(manager_id);
         try {
             new StationImpl().update(station);
            // new ManagerImpl().update(manager);
