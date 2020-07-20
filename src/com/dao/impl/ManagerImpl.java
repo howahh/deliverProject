@@ -12,7 +12,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 import java.sql.SQLException;
 import java.util.List;
 
-public class ManagerDaoImpl implements ManagerInter {
+public class ManagerImpl implements ManagerInter {
 
     QueryRunner qr = new QueryRunner(JDBCUtil.getDataSource());
 
@@ -68,7 +68,7 @@ public class ManagerDaoImpl implements ManagerInter {
 
 
     public static void main(String[] args) throws SQLException {
-        ManagerInter dao = new ManagerDaoImpl();
+        ManagerInter dao = new ManagerImpl();
 //        List<Manager> list = dao.findall();
 //        System.out.println(list);
 

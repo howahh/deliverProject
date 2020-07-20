@@ -1,7 +1,5 @@
 package com.domain.vo;
 
-import java.util.List;
-
 public class MagStation {
     private int manager_id;
     private String manager_name;

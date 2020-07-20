@@ -41,7 +41,7 @@ public class MagFindAllServlet extends HttpServlet {
             response.setContentType("text/json; charset=utf-8");
 
             //调用dao层获得信息
-            List<Manager> list = magFindAll.findAll();
+            List<Manager> list = magFindAll.findall();
             String jsonStr = JSON.toJSONString(list);
 
             PrintWriter out = response.getWriter();
@@ -71,7 +71,7 @@ public class MagFindAllServlet extends HttpServlet {
             response.setContentType("text/json; charset=utf-8");
 
             //调用dao层获得信息
-            List<Manager> list = magFindAll.findAll();
+            List<Manager> list = magFindAll.findall();
             String jsonStr = JSON.toJSONString(list);
             //
             // 把JSON数据作为流（数据流）返回给界面
