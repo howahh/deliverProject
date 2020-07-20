@@ -70,8 +70,8 @@ public class ParcelImpl implements ParcelInter {
     //编辑包裹信息
     @Override
     public int update(Parcel parcel) throws Exception {
-        String sql = "update parcel set parcel_id=?,parcel_num=?,compy_id=?,receiver_name=?,sender_name=?,receiver_city=?,sender_city=?,parcel_city=?,parcel_zhuangtai=?";
-        int a= qr.update(sql,parcel.getParcel_id(),parcel.getParcel_num(),parcel.getCompy_id(),parcel.getReceiver_name(),parcel.getSender_name(),parcel.getReceiver_city(),parcel.getSender_city(),parcel.getParcel_city(),parcel.getParcel_zhuangtai(),parcel.getStation_id());
+        String sql = "update parcel set parcel_id=?,parcel_num=?,compy_id=?,receiver_name=?,sender_name=?,receiver_city=?,sender_city=?,parcel_city=?,parcel_zhuangtai=?,station_id=? where parcel_id=?";
+        int a= qr.update(sql,parcel.getParcel_id(),parcel.getParcel_num(),parcel.getCompy_id(),parcel.getReceiver_name(),parcel.getSender_name(),parcel.getReceiver_city(),parcel.getSender_city(),parcel.getParcel_city(),parcel.getParcel_zhuangtai(),parcel.getStation_id(),parcel.getParcel_id());
         return a;
     }
 }
