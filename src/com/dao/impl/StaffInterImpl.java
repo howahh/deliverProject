@@ -71,9 +71,9 @@ public class StaffInterImpl implements StaffInter {
 //        System.out.println(list);
 
 //          //按名称寻找
-        StaffInfo staffInfo = new StaffInfo();
-        staffInfo = dao.findOne(1);
-        System.out.println(staffInfo);
+//        StaffInfo staffInfo = new StaffInfo();
+//        staffInfo = dao.findOne(1);
+//        System.out.println(staffInfo);
 
 //        //增加
 //        Staff staff = new Staff();
