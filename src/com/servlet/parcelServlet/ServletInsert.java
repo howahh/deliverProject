@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 2020/7/19 -17:39
  **/
-@WebServlet("/ServletInsert")
+@WebServlet("/servletinsert")
 public class ServletInsert extends HttpServlet {
     ParcelImpl parcelimpl = new ParcelImpl();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -84,6 +84,7 @@ public class ServletInsert extends HttpServlet {
             parcel.setParcel_city(parcel_city);
             parcel.setParcel_zhuangtai(parcel_zhuangtai);
             parcel.setStation_id(station_id);
+            System.out.println(parcel);
             parcelimpl.insert(parcel);
         } catch (Exception e) {
             e.printStackTrace();
