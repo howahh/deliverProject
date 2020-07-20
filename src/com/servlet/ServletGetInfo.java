@@ -63,6 +63,7 @@ public class ServletGetInfo extends HttpServlet {
 
             String jsonStr = JSON.toJSONString(userinfo);//转换为json格式
             PrintWriter out = response.getWriter(); //响应对象输出流
+            System.out.println(jsonStr);
             out.print("["+jsonStr+"]");
             out.flush();
             out.close();

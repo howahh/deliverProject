@@ -34,7 +34,7 @@ public class loginServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Credentials", "true");
 
         User users;
-
+        flag=false;
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         String name = request.getParameter("id");
@@ -105,6 +105,7 @@ public class loginServlet extends HttpServlet {
             for(int i=0;i<list.size();i++){
                 users = list.get(i);
                 if(users.getUser_name().equals(name)&&users.getUser_password().equals(password)){
+                    userinfo=users;
                     flag =true;
                     break;
                 }
