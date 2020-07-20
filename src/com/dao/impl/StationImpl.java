@@ -63,15 +63,15 @@ public class StationImpl implements StationInter {
         return list;
     }
 
-    public static void main(String[] args) throws Exception {
-
-        StationImpl stationImpl = new StationImpl();
-        Station station = new Station();
-        station.setManager_id(11);
-        station.setStation_name("77");
-        station.setStation_id(9);
-        stationImpl.update(station);
-
-    }
+//    public static void main(String[] args) throws Exception {
+//
+//        StationImpl stationImpl = new StationImpl();
+//        Station station = new Station();
+//        station.setManager_id(11);
+//        station.setStation_name("77");
+//        station.setStation_id(9);
+//        stationImpl.update(station);
+//
+//    }
 
 }
