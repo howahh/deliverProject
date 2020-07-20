@@ -48,7 +48,7 @@ public class ServletDelStation extends HttpServlet{
       try {
 
          new StationImpl().delete(id);
-         new ManagerImpl().delete(id);
+         //new ManagerImpl().delete(id);
 
       } catch (Exception e) {
          e.printStackTrace();

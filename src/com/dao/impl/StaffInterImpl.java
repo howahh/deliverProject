@@ -24,12 +24,12 @@ public class StaffInterImpl implements StaffInter {
 
 
     @Override
-    public StaffInfo findOne(String name) throws Exception{
+    public StaffInfo findOne(int staff_id) throws Exception{
         String sql = "select staff.staff_id,staff.staff_name,staff.staff_sex,station.station_name,manager.manager_name\n" +
                 "from staff,station,manager\n" +
                 "where staff.station_id=station.station_id\n" +
                 "and staff.manager_id=manager.manager_id\n" +
-                "and staff.staff_name= "+"'"+ name +"'";
+                "and staff.staff_id= "+staff_id;
 //        String sql = "select * from staff where staff_name="+"'"+ name +"'";
         //反射成一个Staff类的bean，根据id做查询
         return qr.query(sql, new BeanHandler<StaffInfo>(StaffInfo.class));
@@ -72,7 +72,7 @@ public class StaffInterImpl implements StaffInter {
 
 //          //按名称寻找
 //        StaffInfo staffInfo = new StaffInfo();
-//        staffInfo = dao.findOne("李琴");
+//        staffInfo = dao.findOne(1);
 //        System.out.println(staffInfo);
 
 //        //增加
